@@ -1,15 +1,15 @@
 <template>
   <div id="app">
     <div>Sample:</div>
-    <Vuecam />
+    <Camera />
   </div>
 </template>
 
 <script>
-import Vuecam from "./Vuecam.vue";
+import Camera from "./Camera.vue";
 export default {
   components: {
-    Vuecam
+    Camera
   }
 };
 </script>

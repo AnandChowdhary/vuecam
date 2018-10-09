@@ -1,7 +1,7 @@
 {
-  "name": "vuecam",
+  "name": "vue-html5-camera",
   "version": "0.1.0",
-  "main": "./src/Vuecam.vue",
+  "main": "./src/Camera.vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
