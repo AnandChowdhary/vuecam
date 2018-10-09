@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>CAMERA {{img}}</div>
     <video playsinline ref="cameraVideo" />
     <canvas id="cameraCanvas" ref="cameraCanvas" aria-hidden="true" />
   </div>
