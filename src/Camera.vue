@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>CAMERA {{img}}</div>
-    <video ref="cameraVideo" />
+    <video playsinline ref="cameraVideo" />
     <canvas id="cameraCanvas" ref="cameraCanvas" aria-hidden="true" />
   </div>
 </template>
@@ -48,7 +48,7 @@ export default {
           });
         })
         .catch(error => {
-          console.log(error);
+          alert(JSON.stringify(error));
         });
     },
     click() {

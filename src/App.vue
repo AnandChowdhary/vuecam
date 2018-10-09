@@ -6,6 +6,7 @@
     <button @click="toggleFacingMode">Toggle camera</button>
     <div>Facing mode: {{facingMode}}</div>
     <div><img alt="Your image" :src="image"></div>
+    <button @click="updateFeed">Force update feed</button>
   </div>
 </template>
 
@@ -24,6 +25,9 @@ export default {
   methods: {
     clickPhoto() {
       this.image = this.$refs.camera.click();
+    },
+    updateFeed() {
+      this.image = this.$refs.camera.updateFeed();
     },
     toggleFacingMode() {
       this.facingMode = this.facingMode === "user" ? "environment" : "user";
