@@ -35,7 +35,7 @@ export default {
         }
       };
       if (this.width) this.$refs.cameraVideo.style.width = this.width + "px";
-      if (this.height) this.$refs.cameraVideo.style.width = this.height + "px";
+      if (this.height) this.$refs.cameraVideo.style.height = this.height + "px";
       this.$refs.cameraVideo.setAttribute("autoplay", "");
       this.$refs.cameraVideo.setAttribute("muted", "");
       this.$refs.cameraVideo.setAttribute("playsinline", "");

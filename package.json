@@ -1,6 +1,6 @@
 {
   "name": "vue-html5-camera",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "main": "./src/Camera.vue",
   "scripts": {
     "serve": "vue-cli-service serve",
