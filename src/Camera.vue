@@ -32,13 +32,14 @@ export default {
       const constraints = {
         audio: false,
         video: {
-          width: this.width || 1280,
-          height: this.height || 720,
           facingMode: this.facingMode || "user"
         }
       };
-      this.$refs.cameraCanvas.style.width = (this.width || 1280) + "px";
-      this.$refs.cameraCanvas.style.height = (this.height || 720) + "px";
+      if (this.width) this.$refs.cameraVideo.style.width = this.width + "px";
+      if (this.height) this.$refs.cameraVideo.style.width = this.height + "px";
+      this.$refs.cameraVideo.setAttribute("autoplay", "");
+      this.$refs.cameraVideo.setAttribute("muted", "");
+      this.$refs.cameraVideo.setAttribute("playsinline", "");
       navigator.mediaDevices
         .getUserMedia(constraints)
         .then(mediaStream => {
@@ -48,18 +49,20 @@ export default {
           });
         })
         .catch(error => {
-          alert(JSON.stringify(error));
+          console.log("Error", error);
         });
     },
     click() {
+      this.$refs.cameraCanvas.width = this.$refs.cameraVideo.offsetWidth;
+      this.$refs.cameraCanvas.height = this.$refs.cameraVideo.offsetHeight;
       this.$refs.cameraCanvas
         .getContext("2d")
         .drawImage(
           this.$refs.cameraVideo,
           0,
           0,
-          this.width || 1280,
-          this.height || 720
+          this.$refs.cameraCanvas.width,
+          this.$refs.cameraCanvas.height
         );
       return this.$refs.cameraCanvas.toDataURL();
     }
@@ -69,12 +72,6 @@ export default {
 
 <style scoped>
 #cameraCanvas {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
+  display: none;
 }
 </style>
