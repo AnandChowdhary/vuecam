@@ -21,4 +21,5 @@ yarn-error.log*
 *.sw*
 
 # Docs
-docs/
+docs
+dist
