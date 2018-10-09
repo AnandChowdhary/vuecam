@@ -3,7 +3,7 @@
 Add `vue-html5-camera` to your Vue.js project:
 
 ```bash
-yarn add -html5-camera
+yarn add vue-html5-camera
 ```
 
 Then use it:
